@@ -3,6 +3,7 @@
 # This script adds Jamf Trust as a login item.                                      #
 # Jamf EA : Jamf Trust login Item creation                                          #
 # Result = Creates login item                                                       #
+# Usage = "Setup a policy and run this script once a week or after major OS Updates #
 #####################################################################################
 
 ## Current User
