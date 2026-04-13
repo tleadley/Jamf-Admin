@@ -1,0 +1,31 @@
+#!/bin/bash
+#####################################################################################
+# This script detects if Jamf Trust is running at checkin.                          #
+# Jamf EA : Jamf Connect Sync (string)                                              #
+# Result = "Password Synced" 0r "Password Not Synced"                               #
+#####################################################################################
+
+loggedInUser=$(scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
+isCurrent=$(defaults read /Users/"$loggedInUser"/Library/Preferences/com.jamf.connect.state PasswordCurrent)
+
+if [ "$isCurrent" != "" ];then
+
+        if [ "$isCurrent" == 1 ];then
+                echo "<result>Password Synced</result>"
+        elif [ "$isCurrent" == 0 ];then
+                echo "<result>Password Not Synced</result>"
+        fi
+
+else
+
+alias=$(dscl . -read /Users/$loggedInUser | grep "RecordName" | awk '{print $2}')
+isCurrent=$(defaults read /Users/"$alias"/Library/Preferences/com.jamf.connect.state PasswordCurrent)
+
+        if [ "$isCurrent" == 1 ];then
+                echo "<result>Password Synced</result>"
+        elif [ "$isCurrent" == 0 ];then
+                echo "<result>Password Not Synced</result>"
+        fi
+
+fi
+exit 0;
