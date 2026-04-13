@@ -1,4 +1,28 @@
+## ⚠️ Disclaimer
 
+**Use at your own risk.**
+
+The scripts, tools, and code provided in this repository are offered **as-is**, without any warranty of any kind, express or implied.
+
+### Important Notes:
+
+- I am **not responsible** for any damage, data loss, service disruption, security issues, or other consequences that may result from using these scripts.
+- These scripts interact with critical systems (Jamf Pro and Okta). Improper use or execution can lead to unintended changes, deletions, or outages in your environment.
+- **Always test thoroughly** in an isolated, non-production environment before deploying to production.
+- It is your responsibility to:
+  - Review and understand the code before running it.
+  - Validate the scripts against your specific Jamf and Okta configuration.
+  - Ensure proper backups and rollback plans are in place.
+  - Test for edge cases and potential side effects.
+
+By using any code from this repository, you acknowledge that you assume full responsibility for any outcomes or consequences.
+
+**No liability** — The author(s) shall not be held liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising from the use of this software.
+
+---
+
+**Recommendation**:  
+Create a dedicated testing instance of Jamf Pro and Okta (or use a sandbox/dev tenant) to safely validate these scripts before applying them in any production setting.
 This repository contains the following files and scripts to help with settings for Okta and Jamf Admin:
 
 - **<code>Extension Attributes (EA)</code>** These are the simple scripts used to manage attributes used for Jamf Admin and it’s automated procedures.
