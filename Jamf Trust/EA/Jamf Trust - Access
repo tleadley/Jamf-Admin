@@ -1,0 +1,23 @@
+#!/bin/bash
+#####################################################################################
+# This script detects if Jamf Trust is running at checkin.                          #
+# Jamf EA : Jamf Trust - Access (string)                                            #
+# Result = "Running" 0r "Not Running"                                               #
+#####################################################################################
+
+ProcessName="JamfPrivateAccess"
+number=$(ps aux | grep -v grep | grep -ci $ProcessName)
+
+if [ "$number" = "1" ]
+    then
+        result="Running"
+
+    elif [ "$number" = "0" ]
+    then
+        result="Not Running"
+
+fi
+
+echo "<result>$result</result>"
+
+exit 0;
