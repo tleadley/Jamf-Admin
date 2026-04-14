@@ -157,7 +157,7 @@ If the script alerts **"Security Authorization Issue"**, the user lacks a **Secu
     
 3. **Watch Path:** Check `/Library/Application Support/JamfProtect/groups/` for the trigger file.
     
-4. **Verify Inventory:** Check Jamf Pro Computer Record -> Extension Attributes -> ID 33 "Password Update" should be **Blank**.
+4. **Verify Inventory:** Check Jamf Pro Computer Record -> Extension Attributes -> ID (Number) "Password Update" should be **Blank**.
     
 
 ---
@@ -168,7 +168,7 @@ If the script alerts **"Security Authorization Issue"**, the user lacks a **Secu
 |---|---|---|
 |**401**|Unauthorized|Check P5/P6/P8/P9 decryption logic.|
 |**403**|Forbidden|Grant "Update" permissions to the API account.|
-|**404**|Not Found|Ensure EA ID 33 "Password Update" exists in Jamf settings.|
+|**404**|Not Found|Ensure EA ID (Number) "Password Update" exists in Jamf settings.|
 
 ---
 
