@@ -100,7 +100,7 @@ update_ea(){
     # Verify we have a token and it isn't expired
     if [[ -n "$token" ]] && [[ $localTokenExpirationEpoch -gt $currentEpoch ]]; then
         getudid=$(ioreg -d2 -c IOPlatformExpertDevice | awk -F\" '/IOPlatformUUID/{print $(NF-1)}')
-        eaID="33"
+        eaID=(Number) # replace with your EA ID number
         eaName="Password Update" 
         value="" 
 
